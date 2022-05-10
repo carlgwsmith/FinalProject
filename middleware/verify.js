@@ -13,7 +13,7 @@ const stateVerify = (req, res, next)=>{
 
   if(!stateExists){
     return res.status(400).json({
-      "message":"State Code Invalid"
+      "message":"Invalid state abbreviation parameter"
     })
   }
 
