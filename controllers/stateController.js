@@ -2,6 +2,7 @@ const States = require('../model/State');
 const statesJSON = require('../model/states.json')
 
 
+
 // GET ALL STATE DATA
 const getStateData = async (req, res)=>{
   console.log('test')
@@ -88,9 +89,9 @@ const getStateAdmission = async (req, res) =>{
   const request = req.params.state;
   const data = statesJSON.find(st => st.code === request);
   const state = data.state
-  const admission = data.admission_date;
+  const admitted = data.admission_date;
 
-  res.json({state, admission});
+  res.json({state, admitted});
 }
 
 
@@ -169,5 +170,7 @@ const getMongoStates = async (req, res) => {
 }
 
 module.exports = {
-  getStateData, getState, getStateCapital, getStateNickName, getStateAdmission, getStatePop, getFunfact, createState, createFunFact, getMongoStates
+  getStateData, getState, getStateCapital, getStateNickName, getStateAdmission, getStatePop, getFunfact, createState,
+  // createFunFact,
+  getMongoStates
 }
