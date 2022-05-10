@@ -17,9 +17,6 @@
   "bugs": {
     "url": "https://github.com/carlgwsmith/FinalProject/issues"
   },
-  "engines": {
-    "node": "14.x"
-  },
   "homepage": "https://github.com/carlgwsmith/FinalProject#readme",
   "dependencies": {
     "cors": "^2.8.5",
@@ -29,5 +26,8 @@
     "node": "^17.7.2",
     "nodemon": "^2.0.15",
     "simple-cors": "^2.0.1"
+  },
+  "engines": {
+    "node": "14.x"
   }
 }
