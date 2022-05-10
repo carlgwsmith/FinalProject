@@ -3,12 +3,14 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const cors = require('cors');
+var corsRoute = require('simple-cors');
 const corsOptions = require('./config/corsOptions');
 const mongoose = require('mongoose');
 const connectDB = require('./config/dbConn');
 const PORT = process.env.PORT || 3500;
 
 connectDB();
+
 // Cross Origin Resource Sharing
 app.use(cors());
 // built-in middleware to handle urlencoded form data

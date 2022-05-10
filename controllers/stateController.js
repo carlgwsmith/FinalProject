@@ -79,7 +79,7 @@ const getStatePop = async (req, res) =>{
   const request = req.params.state;
   const data = statesJSON.find(st => st.code === request);
   const state = data.state
-  const population = data.population;
+  const population = data.population.toLocaleString;
 
   res.json({state, population});
 }
