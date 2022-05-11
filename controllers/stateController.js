@@ -173,6 +173,6 @@ const getMongoStates = async (req, res) => {
 
 module.exports = {
   getStateData, getState, getStateCapital, getStateNickName, getStateAdmission, getStatePop, getFunfact, createState,
-  // createFunFact,
+  createFunFact,
   getMongoStates
 }

@@ -29,6 +29,6 @@ router.route('/mongo')
 
 router.route('/:state/funfact')
   .get(verify, stateController.getFunfact)
-  // .post(verify, stateController.createFunFact);
+  .post(verify, stateController.createFunFact);
 
 module.exports = router;
