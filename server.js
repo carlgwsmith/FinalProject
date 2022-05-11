@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 3500;
 
 // Cross Origin Resource Sharing
 app.use(cors());
+app.options('*', cors());
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", '*');
