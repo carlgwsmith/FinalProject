@@ -129,37 +129,39 @@ const createState = async(req, res)=>{
 
 // CREATE FUNFACT
 
-// const createFunFact= async(req, res)=>{
-//   const request = req.params.state;
-//   const funfacts = req.body.funfacts;
+const createFunFact= async(req, res)=>{
+  const state = req.params.state;
+  const funfactsreq = req.body.funfacts;
 
-//   if(!funfacts){
-//     return res.status(400).json({"message": "Fun facts required"})
-//   } else if(!(funfacts instanceof Array) || funfacts instanceof String){
-//     return res.status(400).json({"message": "Fun facts must in an array or a string"})
-//   }
+  if(!funfactsreq){
+    return res.status(400).json({"message": "Fun facts required"})
+  }
 
-//   const mongoStates = await States.findOne({stateCode: request});
-//   if (!mongoStates) {
-//     try {
-//         const result = await States.create({
-//             stateCode: request,
-//             funfacts: funfacts
-//         });
-//         console.log(typeof result);
-//         res.status(201).json(result);
-//     }
-//     catch (err) {
-//         console.error(err);
-//     }
-// }
-// else {
-//     let funfactArr = foundState.funfacts;
-//     funfactArr = funfactArr.push(...funfacts);
-//     const result = await mongoStates.save();
-//     res.status(201).json(result);
-// }
-// }
+  if(!(funfactsreq instanceof Array) || funfactsreq instanceof String){
+    return res.status(400).json({"message": "Fun facts must in an array or a string"})
+  }
+
+  const mongoStates = await States.findOne({state:state });
+  if (!mongoStates) {
+    try {
+        const result = await States.create({
+            state: state,
+            funfacts: funfacts
+        });
+        console.log(typeof result);
+        res.status(201).json(result);
+    }
+    catch (err) {
+        console.error(err);
+    }
+  }
+  else {
+    let ffArr = foundState.funfacts;
+    ffArr = ffArr.push(...funfacts);
+    const result = await mongoStates.save();
+    res.status(201).json(result);
+  }
+}
 
 
 const getMongoStates = async (req, res) => {
