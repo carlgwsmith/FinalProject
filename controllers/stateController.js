@@ -110,7 +110,7 @@ const getFunfact= async(req, res)=>{
   let randomNum = Math.floor(Math.random() * funfactExists.length);
   let funfact = funfactExists[randomNum];
   
-  res.json(funfact);
+  res.json({funfact});
 }
 
 // CREATE STATE
